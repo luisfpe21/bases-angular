@@ -1,0 +1,35 @@
+<!-- <h4>Listado personajes</h4> -->
+<!-- <ul class="list-group mb-2">
+  <li class="list-group-item">Goku - 1000</li>
+  <li class="list-group-item">Maestro Roshi - 200</li>
+  <li class="list-group-item">Abuelo Gohan - 150</li>
+  <li class="list-group-item">Krillin - 300</li>
+  <li class="list-group-item">Picoro - 400</li>
+  <li class="list-group-item">Yamcha - 250</li>
+  <li class="list-group-item">Ten Shin Han - 300</li>
+  <li class="list-group-item">Chaos - 250</li>
+  <li class="list-group-item">Tao Pai Pai - 200</li>
+</ul> -->
+
+<h4>Listado personajes ngfor</h4>
+<ul class="list-group">
+  <li
+  *ngFor="let cha of characterList;
+  let i = index;
+  let isFirst = first;
+  let isLast = last;
+  let isEven = even;
+  let isOdd = odd
+  "
+  class="list-group-item list-group-item-success">
+    <span class="text-danger">{{i + 1}}</span> -
+    <span>{{cha.name}}</span> -
+    <strong>Power</strong>: {{cha.power}} -
+    <!-- <span>Es el primero: {{i === 0}}</span> -
+    <span>Es el primero 2: {{isFirst}}</span> -
+    <span>Es el último: {{i === characterList.length -1}}</span> -
+    <span>Es el último 2: {{isLast}}</span> -
+    <span>Es par: {{isEven}}</span> -
+    <span>Es impar: {{isOdd}}</span> -->
+  </li>
+</ul>

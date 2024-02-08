@@ -1,0 +1,54 @@
+<h1>{{name}} - {{originName}}</h1>
+<dl>
+  <td>
+    Nombre:
+  </td>
+  <dd>
+    {{name}}
+  </dd>
+
+  <td>
+    Edad:
+  </td>
+  <dd>
+    {{age}}
+  </dd>
+
+  <td>
+    Método:
+  </td>
+  <dd>
+    {{getDescription()}}
+  </dd>
+
+  <td>
+    Cápitalizado:
+  </td>
+  <dd>
+    {{capitalizedName}}
+  </dd>
+
+  <td>
+    Descripcion:
+  </td>
+  <dd>
+    {{originName}}
+  </dd>
+</dl>
+
+<button
+  *ngIf="checkName"
+  (click)="changeHeroe()"
+  class="btn btn-sm btn-primary mx-2">Cambiar Nombre
+</button>
+<button
+  *ngIf="checkAge"
+  (click)="changeAge()"
+  class="btn btn-sm btn-primary">Cambier Edad
+</button>
+
+<button
+  *ngIf="!checkName || !checkAge"
+  (click)="resetForm()"
+  class="btn btn-sm btn-primary mx-2">reset
+</button>
