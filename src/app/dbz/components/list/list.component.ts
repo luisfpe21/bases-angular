@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Character } from '../../interfaces/character.interface';
 
 @Component({
@@ -19,4 +19,24 @@ export class ListComponent {
       power:150
     }
   ]
+
+  // @Output()
+  // public eventToEmitIndexToDelete: EventEmitter<number> = new EventEmitter();
+
+  @Output()
+  public eventToEmitIdToDelete: EventEmitter<string> = new EventEmitter();
+
+  // public deleteCharacterByIndex(index:number):void{
+  //   console.log(index);
+  //   console.log({index});
+  //   this.eventToEmitIndexToDelete.emit(index);
+  // }
+
+  public deleteCharacterById(id:string):void{
+    if(!id) return;
+
+    this.eventToEmitIdToDelete.emit(id);
+  }
+
+
 }
